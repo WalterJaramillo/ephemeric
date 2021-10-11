@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @ephemeri.fecha %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @ephemeri.categoria %>
+</p>
+
+<p>
+  <strong>Comentario:</strong>
+  <%= @ephemeri.comentario %>
+</p>
+
+<p>
+  <strong>Imagen:</strong>
+  <%= @ephemeri.imagen %>
+</p>
+
+<%= link_to 'Edit', edit_ephemeri_path(@ephemeri) %> |
+<%= link_to 'Back', ephemeris_path %>

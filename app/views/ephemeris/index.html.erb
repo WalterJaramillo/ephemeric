@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ephemeris</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Categoria</th>
+      <th>Comentario</th>
+      <th>Imagen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ephemeris.each do |ephemeri| %>
+      <tr>
+        <td><%= ephemeri.fecha %></td>
+        <td><%= ephemeri.categoria %></td>
+        <td><%= ephemeri.comentario %></td>
+        <td><%= ephemeri.imagen %></td>
+        <td><%= link_to 'Show', ephemeri %></td>
+        <td><%= link_to 'Edit', edit_ephemeri_path(ephemeri) %></td>
+        <td><%= link_to 'Destroy', ephemeri, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ephemeri', new_ephemeri_path %>
