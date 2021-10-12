@@ -4,14 +4,6 @@
 
 <%= form_for :search, url: ephemeris_path, method: :get do |f| %>
   <%= f.text_field :categoria %>
-  <div>
-      <%= f.label "busqueda_desde", "Fecha desde "%>
-      <%= f.date_select :created_at %>
-  </div>
-  <div>
-      <%= f.label "busqueda_hasta", "Fecha hasta "%>
-      <%= f.date_select :created_at %>
-  </div>
   <%= f.submit "Search" %>
 <% end %>
 

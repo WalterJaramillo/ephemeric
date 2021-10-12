@@ -6,7 +6,6 @@ class EphemerisController < ApplicationController
      #binding.pry
      search = params['search'] # esto trae el parametro de busqueda
      @ephemeris = search.present? ? Ephemeri.by_categoria(search['categoria']) : Ephemeri.all
-     @ephemeris = search.present? ? Ephemeri.by_categoria(search['created_at']) : Ephemeri.all
     
   end
 
