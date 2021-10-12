@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :categoria %>
-    <%= form.text_field :categoria %>
+    <%= form.select(:categoria, Ephemeri.categories.keys.map {|category| [category.titleize]})  %>
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :imagen %>
-    <%= form.text_field :imagen %>
+    <%= form.file_field :imagen %>
   </div>
 
   <div class="actions">

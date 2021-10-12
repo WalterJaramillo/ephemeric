@@ -2,6 +2,19 @@
 
 <h1>Ephemeris</h1>
 
+<%= form_for :search, url: ephemeris_path, method: :get do |f| %>
+  <%= f.text_field :categoria %>
+  <div>
+      <%= f.label "busqueda_desde", "Fecha desde "%>
+      <%= f.date_select :created_at %>
+  </div>
+  <div>
+      <%= f.label "busqueda_hasta", "Fecha hasta "%>
+      <%= f.date_select :created_at %>
+  </div>
+  <%= f.submit "Search" %>
+<% end %>
+
 <table>
   <thead>
     <tr>
@@ -19,7 +32,7 @@
         <td><%= ephemeri.fecha %></td>
         <td><%= ephemeri.categoria %></td>
         <td><%= ephemeri.comentario %></td>
-        <td><%= ephemeri.imagen %></td>
+        <td><%= image_tag(ephemeri.imagen.url, alt: 'Imagen', resize: "100x100", size: '100') %></td>
         <td><%= link_to 'Show', ephemeri %></td>
         <td><%= link_to 'Edit', edit_ephemeri_path(ephemeri) %></td>
         <td><%= link_to 'Destroy', ephemeri, method: :delete, data: { confirm: 'Are you sure?' } %></td>

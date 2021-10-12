@@ -3,7 +3,11 @@ class EphemerisController < ApplicationController
 
   # GET /ephemeris or /ephemeris.json
   def index
-    @ephemeris = Ephemeri.all
+     #binding.pry
+     search = params['search'] # esto trae el parametro de busqueda
+     @ephemeris = search.present? ? Ephemeri.by_categoria(search['categoria']) : Ephemeri.all
+     @ephemeris = search.present? ? Ephemeri.by_categoria(search['created_at']) : Ephemeri.all
+    
   end
 
   # GET /ephemeris/1 or /ephemeris/1.json
@@ -64,6 +68,6 @@ class EphemerisController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def ephemeri_params
-      params.require(:ephemeri).permit(:fecha, :categoria, :comentario, :imagen)
+      params.require(:ephemeri).permit(:fecha, :categoria, :comentario, :imagen, :created_at)
     end
 end

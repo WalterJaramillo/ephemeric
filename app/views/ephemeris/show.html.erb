@@ -17,7 +17,7 @@
 
 <p>
   <strong>Imagen:</strong>
-  <%= @ephemeri.imagen %>
+  <%= image_tag(@ephemeri.imagen.url, alt: 'Imagen', resize: "100x100", size: '100') %>
 </p>
 
 <%= link_to 'Edit', edit_ephemeri_path(@ephemeri) %> |
